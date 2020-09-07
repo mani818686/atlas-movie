@@ -1,5 +1,5 @@
+import { DataService } from './../data.service';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
+  movieslist;
+  constructor(private d:DataService) { }
   ngOnInit(): void {
+    
+      this.applyFilter({});
   }
-
+  applyFilter(filter){
+    console.log(JSON.stringify(filter));
+    this.d.filterdata(filter).subscribe( (res) => {
+      this.movieslist = res;
+    });
+  }
 }
