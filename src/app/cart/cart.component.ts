@@ -8,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
+  cartmap;
   constructor(private ds:DataService) { }
-  cartdata;
   ngOnInit(): void { 
-    this.cartdata=this.ds.getcart;
+
+  this.cartmap=this.ds.countMap;
   }
+
+  
 }

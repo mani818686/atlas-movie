@@ -10,6 +10,7 @@
         </div>
         <button class="btn btn-primary" type="button" (click)="applyFilter()">
                         Go
+                 <div [ngClass]="{'d-none':ds.display!=true}" class="spinner-border" ></div>
             </button>
         
     </form>

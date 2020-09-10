@@ -12,6 +12,7 @@ export class NavComponent implements OnInit {
 
   constructor(public ds:DataService) { }
   ngOnInit(): void {
+    
   }
 
 

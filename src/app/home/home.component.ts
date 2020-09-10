@@ -10,13 +10,12 @@ export class HomeComponent implements OnInit {
   movieslist;
   constructor(private d:DataService) { }
   ngOnInit(): void {
-    
       this.applyFilter({});
   }
   applyFilter(filter){
-    console.log(JSON.stringify(filter));
     this.d.filterdata(filter).subscribe( (res) => {
       this.movieslist = res;
+      this.d.display=false;
     });
   }
 }

@@ -11,8 +11,8 @@ export class MoviesComponent implements OnInit {
   @Input() movies;
   constructor(private d:DataService) { }
   ngOnInit(): void {}
-  addToCart(id)
+  addToCart(title)
   {
-      this.d.addcart(id);
+      this.d.addcart(title);
   }
 }

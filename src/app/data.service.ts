@@ -7,8 +7,9 @@ import {HttpClient} from '@angular/common/http';
 export class DataService {
   constructor(private http:HttpClient) {
    }
-private cartdetails:any[]=[];
+public countMap=new Map();
 public count:number=0;
+public display:boolean=false;
   filterdata(options?)
   { let str = ""; // query string
   if(options && options.year){
@@ -23,14 +24,21 @@ public count:number=0;
     }
       return this.http.get('http://localhost:3000/api/movies'+str);
   }
-addcart(id)
+addcart(title)
 {
-this.cartdetails.push(id);
+if(this.countMap.has(title))
+{
+  this.countMap.set(title,this.countMap.get(title)+1);
+}
+else
+{
+  this.countMap.set(title,1);
+}
 this.count+=1;
 }
 get getcart()
 {
-  return this.cartdetails;
+  return this.countMap;
 }
 
 }
