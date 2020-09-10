@@ -1,3 +1,4 @@
+
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-filter',
@@ -10,11 +11,22 @@ export class FilterComponent implements OnInit {
   filterData = {year:1920, genres:[]};
   @Output() filterChange = new EventEmitter();
   constructor() { }
+  display;
+  count;
   ngOnInit(): void {
+    this.display="none";
+  }
+  dis()
+  {
+    this.display="none";
+    console.log(new Date()+this.display);
   }
   applyFilter()
   {
+    this.display="inline-block";
     this.filterChange.emit(this.filterData);
+    setTimeout(this.dis,2000);
+    console.log(new Date()+this.display);
   }
 
 }

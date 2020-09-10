@@ -5,3 +5,13 @@
     color: #FFFFFF;
     background: #333333;
 }
+.badge { 
+    position: relative; 
+    top: -15px; 
+    left: -20px; 
+    border: 1px solid black; 
+    border-radius: 100%; 
+} 
+button { 
+    margin:5px; 
+} 
