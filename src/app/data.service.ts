@@ -22,7 +22,7 @@ public display:boolean=false;
         str+="&&?genre="+options.genres[g];
       }
     }
-      return this.http.get('http://localhost:3000/api/movies'+str);
+      return this.http.get('https://angular--practice.herokuapp.com/api/movies'+str);
   }
 addcart(title)
 {
